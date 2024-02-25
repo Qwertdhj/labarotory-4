@@ -1,0 +1,429 @@
+@font-face {
+  font-family: isocpeur;
+  src: url(src/fonts/isocpeur.ttf);
+}
+::selection {
+  background: #262626; 
+  }
+  ::-moz-selection {
+  background: #262626;
+  }
+html, body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation: body;
+}
+@keyframes body
+{
+  0%
+  {
+    opacity: 0;
+  }
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  position: relative;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  background: #030303;
+  overflow: hidden;
+}
+
+.panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.panel._active {
+  z-index: 10;
+}
+
+.trans-layer, .section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.trans-layer {
+  background: #0A0A0A;
+  transform: translateY(-100%) skew(0) rotate(0) scale(1);
+  transition: all 500ms ease-in-out;
+  transition-delay: 500ms;
+}
+._active .trans-layer {
+  transform: translateY(0) skew(0) rotate(0) scale(1);
+  transition-delay: 0ms;
+}
+.section {
+  transform: translateY(100%);
+  transition: all 500ms ease-in-out;
+  transition-delay: 0ms;
+  background: #030303;
+}
+._active .section {
+  transform: translateY(0);
+  transition-delay: 500ms;
+}
+
+.section-content {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: arial;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 500ms ease;
+  transition-delay: 0s;
+}
+._active .section-content {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 1000ms;
+}
+
+.nav-dots {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 40px;
+  left: 5.8%;
+}
+
+.nav-dot {
+  width: 20px;
+  height: 1px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+}
+/* .nav-dots::after
+{
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 285px;
+  background: #fff;
+}
+.nav-dots::before
+{
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 285px;
+  background: #fff;
+  top: 0;
+
+} */
+.nav-dot.active {
+  width: 30px;
+  left: 4px;
+  position: relative;
+}
+
+.next-btn, .prev-btn {
+  display: none;
+}
+
+.next-btn {
+  bottom: 10px;
+  right: 14px;
+}
+
+.prev-btn {
+  top: 10px;
+  right: 14px;
+}
+.title
+{
+  position: absolute;
+  left: 16%;
+  top: 22%;
+}
+.title h1
+{
+  font-family: isocpeur;
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+.title-two
+{
+  position: absolute;
+  left: 16%;
+  top: 32%;
+}
+.title-two h3
+{
+  font-size: 17.7px;
+  font-family: isocpeur;
+  font-weight: 400;
+}
+.text-block-one
+{
+  position: absolute;
+  left: 16%;
+  width:  459px;
+}
+.text-block-one span
+{
+  color: #fff;
+  font-family: isocpeur;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.text-block-two
+{
+  position: absolute;
+  width: 413px;
+  right: 5%;
+  top: 46%;
+  float: right;
+  display: grid;
+}
+.text-block-two span
+{
+  color: #fff;
+  font-family: isocpeur;
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-align: right;
+}
+.letter-one
+{
+  letter-spacing: 1.5px;
+}
+.letter-two
+{
+  letter-spacing: 11px;
+}
+.letter-three
+{
+  letter-spacing: 18px;
+}
+.letter-five
+{
+  letter-spacing: 3px;
+}
+.title .letter-four
+{
+  letter-spacing: 20px;
+}
+/* фото */
+.section-image-position
+{
+  position: absolute;
+  top: 32%;
+  width: 100%;
+  left: 66%;
+  z-index: -1;
+}
+.section-image-o
+{
+  position: absolute;
+}
+.section-image-position-ab
+{
+  position: absolute;
+  width: 40.5%;
+  height: 100%;
+  float: right;
+  display: initial;
+  right: 0;
+  top: 0;
+}
+.section-image
+{
+  transition: .3s;
+  height: 100%;
+}
+.section-image img
+{
+  width: 100%;
+  height: 100%;
+}
+.section-image:hover
+{
+  transform: scale(0.9);
+}
+/* кнопка */
+.button
+{
+  position: absolute;
+  top: 75%;
+  left: 16%;
+}
+.button a
+{
+  font-size: 17px;
+  font-family: isocpeur;
+  background: #262626;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  padding: 15px 55px 15px 55px;
+  transition: .3s;
+}
+.button a:hover
+{
+  background: #0A0A0A;
+}
+.container
+{
+  position: absolute;
+  left: 16%;
+  top: 48%;
+}
+.container a,
+.container span
+{
+  color: #fff;
+  text-decoration: none;
+  font-family: isocpeur;
+  font-size: 25px;
+  position: relative;
+  display: block;
+  padding-bottom: 30px;
+  transition: .3s;
+}
+.container a:hover,
+.container span:hover
+{
+  color: #c1c1c1;
+}
+.container a::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  width: 100%;
+  height: 1px;
+  background-color: #262626;
+  content: "";
+  border-radius: 10px;
+}
+.container a:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  width: 0;
+  height: 3px;
+  background-color: #ffffff;
+  content: "";
+  transition: width 0.3s;
+  border-radius: 10px;
+}
+
+.container a:hover:after {
+width: 30%;
+}
+.text-two
+{
+  font-size: 20px;
+  color: #B5B5B5;
+}
+.adress
+{
+  position: relative;
+  top: 35px;
+}
+/* навигатор */
+nav
+{
+  color: white;
+  background: #030303;
+  position: absolute;
+  height: 15px;
+  top: 8.5%;
+  left: 6.7%;
+  letter-spacing: 1px;
+  z-index: 999999;
+}
+.logo
+{
+  font-family: isocpeur;
+  font-size: 20px;
+  transition: .3s;
+  cursor:context-menu;
+}
+.logo:hover
+{
+  letter-spacing: 5px;
+}
+img
+{
+  -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;
+}
+/* изменение 5 слайда */
+.wrapper-box
+{
+  width: 70%;
+  height: 280px;
+  overflow-y: scroll;
+  position: absolute;
+  left: 15%;
+  top: 40%;
+}
+.wrapper-box::-webkit-scrollbar
+{
+  width: 4px;
+  background: #262626;
+  border-radius: 10px;
+}
+.wrapper-box::-webkit-scrollbar-thumb
+{
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+.prise-list
+{
+  position: absolute;
+  left: 0;
+  display: inline-grid;
+}
+.text-list
+{
+  font-size: 25px;
+  font-family: isocpeur;
+  margin-top: 7%;
+  left: 5%;
+  position: relative;
+}
+.list
+{
+  display: -webkit-inline-flex;
+  padding-top: 30px;
+  transition: .3s;
+}
+.list:hover
+{
+  transform: translateX(10px);
+}
