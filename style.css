@@ -427,3 +427,10 @@ img
 {
   transform: translateX(10px);
 }
+@media (min-width: 1280px)
+{
+  .letter-five
+  {
+    margin: 0;
+  }
+}
